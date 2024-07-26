@@ -13,8 +13,8 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, title, price, rating, whatsappLink }) => {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden  duration-300 hover:scale-105 ">
-      <Image
+    <div className="bg-white shadow-lg mb-4 rounded-lg overflow-hidden  duration-300 hover:scale-105 ">
+      <Image  
         src={imageSrc}
         alt={title}
         width={300}

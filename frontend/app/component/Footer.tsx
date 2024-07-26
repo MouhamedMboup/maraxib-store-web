@@ -17,13 +17,14 @@ const Footer: React.FC<FooterProps> = ({className}) => {
       </div>
       <div className="w-full md:w-1/4 mb-8 md:mb-0">
         <h2 className="text-xl font-bold mb-4">Contact</h2>
-        <p><MdEmail className="inline-block size-7" /> maraxib@gmail.com</p>
+        <a href="mailto:amethmboup99@gmail.com" className="hover:underline"><MdEmail className="inline-block size-7 " /> maraxib@gmail.com</a>
       </div>
       <div className="w-full md:w-1/4 mb-8 md:mb-0">
         <h2 className="text-xl font-bold mb-4">Liens rapides</h2>
         <ul>
           <li><Link href="/acceuil" className="hover:underline">Accueil</Link></li>
-          <li><Link href="/produits" className="hover:underline">Produits</Link></li>
+          <li><Link href="/hommes" className="hover:underline">Hommes</Link></li>
+          <li><Link href="/femmes" className="hover:underline">Femmes</Link></li>
           <li><Link href="/contact" className="hover:underline">Contact</Link></li>
         </ul>
       </div>

@@ -1,0 +1,36 @@
+'use client'
+
+import React from 'react'
+import Navbar from '../component/Navbar'
+import Herosection from '../component/Herosection'
+import FeaturedCollection from '../component/FeaturedSection'
+import { FaArrowCircleRight } from 'react-icons/fa'
+import Servicesinfo from '../component/Servicesinfo'
+import Footer from '../component/Footer'
+import useFadeInOnScroll from '../hook/useFadeInOnScroll'
+
+
+
+
+
+export default function Acceuil() {
+
+  useFadeInOnScroll();
+  
+  return (  
+    <div className='font-mono'>
+      <Navbar/>
+      <Herosection className="fade-in"/>
+      {/* -----card categaories --------- */}
+      <FeaturedCollection title1="New Collection"  className="fade-in"/>
+      <FeaturedCollection title1="Découvrez nos produits"  className="fade-in"/>
+      <button className="bg-black text-white py-4 px-6 rounded-full flex items-center justify-center mx-auto animate-bounce ">
+              Voir plus &nbsp; <FaArrowCircleRight className='size-5 ' />
+      </button>
+      <Servicesinfo/>
+      <Footer className="fade-in" />       
+    </div>
+   
+
+  )
+}

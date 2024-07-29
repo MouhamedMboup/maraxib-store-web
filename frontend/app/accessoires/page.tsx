@@ -10,98 +10,84 @@ import useFadeInOnScroll from '../hook/useFadeInOnScroll';
 
 const productsSet1 = [
   {
-    imageSrc: '/assets/femme/veil1.png',
+    imageSrc: '/assets/product1.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil1a.png',
+    imageSrc: '/assets/product2.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil2.png',
+    imageSrc: '/assets/product3.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil3.png',
+    imageSrc: '/assets/product4.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil4.png',
+    imageSrc: '/assets/product5.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil5.png',
+    imageSrc: '/assets/product6.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil6.png',
+    imageSrc: '/assets/product7.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil7.png',
+    imageSrc: '/assets/product8.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil8.png',
+    imageSrc: '/assets/product9.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil9.png',
+    imageSrc: '/assets/product10.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil10.png',
+    imageSrc: '/assets/product11.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
     whatsappLink: 'https://wa.me/776719785',
   },
   {
-    imageSrc: '/assets/femme/veil11.png',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/femme/veil12.png',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/femme/veil13.png',
+    imageSrc: '/assets/product12.jpg',
     title: 'bayelat',
     price: 10000,
     rating: 4,
@@ -110,18 +96,107 @@ const productsSet1 = [
 
 ];
 
+const productsSet2 = [
+  {
+    imageSrc: '/assets/njaxass/njaxass5b.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/njaxass/njaxass6.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/njaxass/njaxass7.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/njaxass/njaxass8.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/njaxass/njaxass8a.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/njaxass/njaxass9.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+];
+
+const productsSet3 = [
+  {
+    imageSrc: '/assets/kourous/kourous2.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/kourous/kourous3.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/kourous/kourous4.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/kourous/kourous5.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/kourous/kourous6.jpg',
+    title: 'Laxasaay',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+  {
+    imageSrc: '/assets/kourous/kourous7.jpg',
+    title: 'Chapelet',
+    price: 10000,
+    rating: 4,
+    whatsappLink: 'https://wa.me/776719785',
+  },
+];
 
 
 
 
 const Page: React.FC = () => {
-  
+
   useFadeInOnScroll();
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
     <div>
-      <nav className=" mb-10 bg-white border-gray-200 dark:bg-gray-900 border-b fixed w-full z-20 top-0 start-0 font-mono text-xl">
+    <nav className=" mb-10 bg-white border-gray-200 dark:bg-gray-900 border-b fixed w-full z-20 top-0 start-0 font-mono text-xl">
     <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <Link href="#" className="flex items-center">
 
@@ -151,7 +226,7 @@ const Page: React.FC = () => {
         <button data-collapse-toggle="navbar-search" type="button" 
         className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" 
         aria-expanded={navbarOpen ? "true" : "false"}
-        onClick={() => setNavbarOpen(!navbarOpen)}>
+        onClick={() => setNavbarOpen(!navbarOpen)} >
           <span className="sr-only">Open main menu</span>
           <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
@@ -173,30 +248,25 @@ const Page: React.FC = () => {
           className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           <li>
             <Link href="/acceuil"
-             className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                Acceuil</Link>
+             className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Acceuil</Link>
           </li>
           <li>
-          <Link href="/hommes"
-              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                Hommes</Link>
+            <Link href="/hommes"
+              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Hommes</Link>
             </li>
-            <li>
+          <li>
+            <Link href="/femmes"
+              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Femmes</Link>
+          </li>
+          <li>
             <Link href="/"
               className="block py-2 pl-3 pr-4 text-white bg-cyan-400 rounded md:bg-transparent md:text-cyan-400 md:p-0 md:dark:text-blue-500"
-              aria-current="page">
-                Femmes</Link>
-                </li>
-                <li>
-            <Link href="/accessoires"
-              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                Accessoires</Link>
+              aria-current="page">Accesoires</Link>
           </li>
           
           <li>
             <Link href="/contact"
-              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
-                Contact</Link>
+              className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-cyan-400 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</Link>
           </li>
         </ul>
       </div>
@@ -206,10 +276,13 @@ const Page: React.FC = () => {
  <div className='pt-20 mt-10'>
  <SearchBar/>
  </div>
- <FeaturedCollection title1={'Hijabi'} products={productsSet1} className="fade-in"/>
+ 
+ <FeaturedCollection title1="Bayelat" products={productsSet1} className="fade-in"/>
+ <FeaturedCollection title1="Laxasaay" products={productsSet2} className="fade-in"/>
+ <FeaturedCollection title1="chapelet" products={productsSet3} className="fade-in"/>
+ <FeaturedCollection title1="Jelaba" products={productsSet3} className="fade-in"/>
  <Servicesinfo/>
  <Footer className="fade-in"/>
- 
 
 
       

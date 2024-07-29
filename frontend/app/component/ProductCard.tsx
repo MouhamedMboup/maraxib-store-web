@@ -1,22 +1,21 @@
 'use client';
-// components/ProductCard.js
 import Image from 'next/image';
 import { FaWhatsapp } from "react-icons/fa6";
 
 interface ProductCardProps {
-  imageSrc: string;
-  title: string;
-  price: number;
+  image: string;
+  libelle: string;
+  prix: number;
   rating: number;
-  whatsappLink: string;
+  lien_watshapp: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, title, price, rating, whatsappLink }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ image, libelle, prix, rating, lien_watshapp }) => {
   return (
     <div className="bg-white shadow-lg mb-4 rounded-lg overflow-hidden  duration-300 hover:scale-105 ">
       <Image  
-        src={imageSrc}
-        alt={title}
+        src={image}
+        alt={libelle}
         width={300}
         height={300}
         className="w-full h-72 object-scale-down"
@@ -38,17 +37,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ imageSrc, title, price, ratin
             ))}
           </div>
           <a
-            href={whatsappLink}
+            href={lien_watshapp}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Contact ${title} on WhatsApp`}
+            aria-label={`Contact ${libelle} on WhatsApp`}
             className="text-green-500"
           >
             <FaWhatsapp className="w-10 h-10" />
           </a>
         </div>
-        <h3 className="text-lg font-bold">{title}</h3>
-        <p className="text-gray-700">{price} Fcfa</p>
+        <h3 className="text-lg font-bold">{libelle}</h3>
+        <p className="text-gray-700">{prix} Fcfa</p>
       </div>
     </div>
   );

@@ -24,21 +24,22 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({ title1, classNa
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    axios.get('/produits')
+    axios.get(`getProduits`)
       .then((response: { data: any[]; }) => {
         const fetchedProducts = response.data.map((product: any) => ({
           id: product.id,
-          image: product.image,
-          libelle: product.name,
-          prix: product.price,
+          image: `http://127.0.0.1:8000/storage/${product.image}`,
+          libelle: product.libelle,
+          prix: product.prix,
           rating: 4, 
-          lien_watshap: `https://wa.me/778666064?text=Bienvenu ${product.name}`,
+          lien_watshap: ` ${product.name}`,
         }));
         setProducts(fetchedProducts);
         setLoading(false);
       })
       .catch((_error: any) => {
         setError('Error fetching products');
+        console.error()
         setLoading(false);
       });
   }, []);
@@ -59,8 +60,14 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({ title1, classNa
       </h2>
       <div className="flex flex-wrap justify-center space-x-4">
         {products.map((product) => (
-          <div key={product.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
-            <ProductCard lien_watshapp={''} {...product} />
+          <div key={product.id} className="w-full sm:w-1/2 md:w-1/5 lg:w-1/6 p-1 mb-2">
+            <ProductCard
+             lien_watshapp={'https://wa.me/778666064?text=Bienvenu'}
+              {...product} 
+               image={product.image}
+               libelle={product.libelle}
+               prix={product.prix}
+            />
           </div>
         ))}
       </div>

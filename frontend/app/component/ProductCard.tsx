@@ -18,7 +18,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, libelle, prix, rating,
         alt={libelle}
         width={300}
         height={300}
-        className="w-full h-72 object-scale-down"
+        className="w-full h-48 object-scale-down"
       />
       <div className="p-4">
         <div className="flex items-center justify-between mb-2">
@@ -46,8 +46,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, libelle, prix, rating,
             <FaWhatsapp className="w-10 h-10" />
           </a>
         </div>
-        <h3 className="text-lg font-bold">{libelle}</h3>
-        <p className="text-gray-700">{prix} Fcfa</p>
+        <h3 className="text-sm font-bold">{libelle}</h3>
+        <p className="text-gray-700 text-sm">{prix} Fcfa</p>
       </div>
     </div>
   );

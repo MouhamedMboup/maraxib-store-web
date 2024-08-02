@@ -20,7 +20,7 @@ const Herosection : React.FC<HerosectionProps> = ({ className}) => {
             </button>
         </div>
         <div className=" mt-8 md:mt-0  justify-center">
-            <Image src="/assets/image1.jpg" alt="mockup" priority width={500} height={500} quality={100} className=' top-5 rounded-lg shadow-lg ' />
+            <Image src="/assets/hommes/accueil.jpg" alt="mockup" priority width={500} height={500} quality={100} className=' top-5 rounded-lg shadow-lg ' />
         </div> 
                    
     </section>

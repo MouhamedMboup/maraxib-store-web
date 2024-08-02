@@ -206,7 +206,7 @@ const Page: React.FC = () => {
  <div className='pt-20 mt-10'>
  <SearchBar/>
  </div>
- <FeaturedCollection title1={'Hijabi'} products={productsSet1} className="fade-in"/>
+ <FeaturedCollection title1={'Hijabi'}  className="fade-in"/>
  <Servicesinfo/>
  <Footer className="fade-in"/>
  

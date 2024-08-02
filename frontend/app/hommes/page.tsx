@@ -277,10 +277,10 @@ const Page: React.FC = () => {
  <SearchBar/>
  </div>
  
- <FeaturedCollection title1="Bayelat" products={productsSet1} className="fade-in"/>
- <FeaturedCollection title1="Laxasaay" products={productsSet2} className="fade-in"/>
- <FeaturedCollection title1="chapelet" products={productsSet3} className="fade-in"/>
- <FeaturedCollection title1="Jelaba" products={productsSet3} className="fade-in"/>
+ <FeaturedCollection title1="Bayelat"  className="fade-in"/>
+ <FeaturedCollection title1="Laxasaay"  className="fade-in"/>
+ <FeaturedCollection title1="chapelet"  className="fade-in"/>
+ <FeaturedCollection title1="Jelaba"  className="fade-in"/>
  <Servicesinfo/>
  <Footer className="fade-in"/>
 

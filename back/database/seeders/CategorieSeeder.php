@@ -13,13 +13,12 @@ class CategorieSeeder extends Seeder
      */
     public function run(): void
     {
-        Categorie::create(['libelle' => 'Djallabe', 'genre_id' => 1]);
-        Categorie::create(['libelle' => 'Baye Lahat', 'genre_id' => 2]);
-        Categorie::create(['libelle' => 'Robe', 'genre_id' => 1]);
-        Categorie::create(['libelle' => 'Accessoire', 'genre_id' => 2]);
-        Categorie::create(['libelle' => 'Ndiaxass', 'genre_id' => 1]);
-        Categorie::create(['libelle' => 'Echarpe', 'genre_id' => 2]);
-        Categorie::create(['libelle' => 'Voile', 'genre_id' => 2]);
-        Categorie::create(['libelle' => 'kourouss', 'genre_id' => 2]);
+        Categorie::create(['libelle' => 'Djallabe', 'type_produit_id' => 1]);
+        Categorie::create(['libelle' => 'Baye Lahat', 'type_produit_id' => 1]);
+        Categorie::create(['libelle' => 'Robe', 'type_produit_id' => 2]);
+        Categorie::create(['libelle' => 'Ndiaxass', 'type_produit_id' => 1]);
+        Categorie::create(['libelle' => 'Echarpe', 'type_produit_id' => 2]);
+        Categorie::create(['libelle' => 'Voile', 'type_produit_id' => 2]);
+        Categorie::create(['libelle' => 'kourouss', 'type_produit_id' => 1]);
     }
 }

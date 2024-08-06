@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Genre;
+use App\Models\TypesProduits;
 use Illuminate\Support\Facades\Validator;
 
 
 
-class GenreController extends Controller
+class TypesProduitsController extends Controller
 {
 
     public function addGenre()
     {
-
-        $genre = Genre::all();
+        $genre = TypesProduits::all();
         return response()->json($genre);
     }
 
@@ -22,7 +22,6 @@ class GenreController extends Controller
     {
         $rules = [
             'libelle' => 'required|string|max:255',
-
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -31,7 +30,7 @@ class GenreController extends Controller
             return response()->json(['error' => $validator->errors()], 400);
         }
 
-        $genre = Genre::create($validator->validated());
+        $genre = TypesProduits::create($validator->validated());
 
         return response()->json(['message' => 'Genre créée avec succès', 'categorie' => $genre], 201);
 
@@ -42,7 +41,7 @@ class GenreController extends Controller
      */
     public function show(string $id)
     {
-        $genre = Genre::find($id);
+        $genre = TypesProduits::find($id);
 
         if (!$genre) {
             return response()->json(['message' => 'Genre non trouvée'], 404);
@@ -55,7 +54,7 @@ class GenreController extends Controller
     public function update(Request $request, string $id)
     {
 
-        $genre = Genre::find($id);
+        $genre = TypesProduits::find($id);
 
         if (!$genre) {
             return response()->json(['message' => 'Genre non trouvée'], 404);
@@ -63,7 +62,6 @@ class GenreController extends Controller
 
         $rules = [
             'libelle' => 'string|max:255',
-
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -82,7 +80,7 @@ class GenreController extends Controller
      */
     public function destroy(string $id)
     {
-        $genre = Genre::find($id);
+        $genre = TypesProduits::find($id);
 
         if (!$genre) {
             return response()->json(['message' => 'Genre non trouvée'], 404);

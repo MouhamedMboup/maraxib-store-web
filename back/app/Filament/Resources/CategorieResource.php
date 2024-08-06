@@ -14,8 +14,6 @@ use Filament\Tables\Actions\ViewAction;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CategorieResource extends Resource
 {
@@ -31,9 +29,9 @@ class CategorieResource extends Resource
                 ->label('Libellé')
                 ->required(),
 
-                Forms\Components\Select::make('genre_id')
-                ->label('Genre')
-                ->relationship('genre', 'libelle')
+                Forms\Components\Select::make('type_produit_id')
+                ->label('TypesProduits')
+                ->relationship('typeProduit', 'libelle')
                 ->required()
             ]);
     }
@@ -47,8 +45,8 @@ class CategorieResource extends Resource
                 ->sortable()
                 ->searchable(),
 
-                Tables\Columns\TextColumn::make('genre.libelle')
-                    ->label('Genre')
+                Tables\Columns\TextColumn::make('typeProduit.libelle')
+                    ->label('Type de Produit')
                     ->sortable()
                     ->searchable(),
             ])

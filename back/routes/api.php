@@ -5,7 +5,7 @@ use App\Http\Controllers\GenreController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProduitController;
-
+use App\Http\Controllers\TypesProduitsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/produitsHomme', [ProduitController::class, 'produitsHomme']);
 Route::get('/produitsFemme', [ProduitController::class, 'produitsFemme']);
+Route::get('/produits/{typeProduit}', [ProduitController::class, 'produits']);
 
 
 Route::get('/newCollection', [ProduitController::class, 'newCollection']);
@@ -37,5 +38,5 @@ Route::put('/produits/{id}', [ProduitController::class, 'update']);
 Route::delete('/produits/{id}', [ProduitController::class, 'destroy']);
 
 Route::post('/categorie', [CategorieController::class, 'addCategorie']);
-Route::post('/genre', [GenreController::class, 'addGenre']);
+Route::post('/genre', [TypesProduitsController::class, 'addGenre']);
 

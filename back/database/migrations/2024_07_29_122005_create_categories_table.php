@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,8 +15,9 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('libelle');
-            $table->foreignId('genre_id')->constrained('genres');
+            $table->unsignedBigInteger('type_produit_id'); 
             $table->timestamps();
+            $table->foreign('type_produit_id')->references('id')->on('types_produits')->onDelete('cascade'); 
         });
     }
 

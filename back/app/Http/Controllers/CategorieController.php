@@ -18,7 +18,7 @@ class CategorieController extends Controller
     {
         $rules = [
             'libelle' => 'required|string|max:255',
-            'genre_id' => 'required|integer|exists:genres,id',
+            'type_produit_id' => 'required|integer|exists:genres,id',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -53,7 +53,7 @@ class CategorieController extends Controller
 
         $rules = [
             'libelle' => 'string|max:255',
-            'genre_id' => 'integer|exists:genres,id',
+            'type_produit_id' => 'integer|exists:genres,id',
         ];
 
         $validator = Validator::make($request->all(), $rules);

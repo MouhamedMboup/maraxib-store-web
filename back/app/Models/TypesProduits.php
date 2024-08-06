@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Genre extends Model
+class TypesProduits extends Model
 {
     use HasFactory;
 
@@ -14,8 +14,8 @@ class Genre extends Model
     ];
 
     // Relation avec la table Categories
-    public function categories()
+   public function categories()
     {
-        return $this->hasMany(Categorie::class);
+        return $this->hasMany(Categorie::class, 'type_produit_id');
     }
 }

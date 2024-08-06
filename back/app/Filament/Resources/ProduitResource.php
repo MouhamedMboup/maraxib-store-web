@@ -39,8 +39,7 @@ class ProduitResource extends Resource
 
             FileUpload::make('image')
                 ->label('Image')
-                ->image()
-                ->directory('produits/images'),
+                ->image(),
 
             Forms\Components\TextInput::make('lien_whatsapp')
                 ->label('Lien WhatsApp')

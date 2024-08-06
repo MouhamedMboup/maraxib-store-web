@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use Illuminate\Http\Request;
 use App\Models\Produit;
+use App\Models\TypesProduits;
 use Illuminate\Support\Facades\Validator;
 
 class ProduitController extends Controller
@@ -18,29 +19,19 @@ class ProduitController extends Controller
         return response()->json($produits);
     }
 
-    public function produitsHomme()
+    public function produits($typeProduit)
     {
-        $genreHomme = Genre::where('libelle', 'homme')->first();
+        $genreProduit = TypesProduits::where('libelle', $typeProduit)->first();
 
-        if(!$genreHomme){
+        if(!$genreProduit){
         return response()->json(['error'=> "Ce genre n'existe pas "]);
         }
 
-        $categories = $genreHomme->categories()->with('produits')->get();
+        $categories = $genreProduit->categories()->whereHas('produits')->with('produits')->get();
 
-        return response()->json($categories);
-    }
-
-    public function produitsFemme()
-    {
-        $genreFemme = Genre::where('libelle', 'femme')->first();
-
-        if(!$genreFemme){
-        return response()->json(['error'=> "Ce genre n'existe pas "]);
+        if($categories->isEmpty()){
+            return response()->json(['message'=> "Il n'y a pas de produits de type $typeProduit !"]);
         }
-
-        $categories = $genreFemme->categories()->with('produits')->get();
-
         return response()->json($categories);
     }
 

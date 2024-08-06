@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('produits', function (Blueprint $table) {
-            $table->id();
-            $table->string('libelle'); // 'nom' du produit
-            $table->decimal('prix', 8, 2); // 'prix' du produit
-            $table->string('image'); // Chemin ou URL de l'image
-            $table->string('lien_whatsapp'); // Lien WhatsApp
-            $table->foreignId('categorie_id')->constrained('categories');
+            $table->bigIncrements('id');
+            $table->string('libelle');
+            $table->decimal('prix', 8, 2); 
+            $table->string('image'); 
+            $table->string('lien_whatsapp'); 
+            $table->unsignedBigInteger('categorie_id');
             $table->timestamps();
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

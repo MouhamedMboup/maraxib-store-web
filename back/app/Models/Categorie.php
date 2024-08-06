@@ -11,7 +11,7 @@ class Categorie extends Model
 
     protected $fillable = [
         'libelle',
-        'genre_id'
+        'type_produit_id'
     ];
 
     // Définir la relation avec le modèle Produit
@@ -20,9 +20,9 @@ class Categorie extends Model
         return $this->hasMany(Produit::class, 'categorie_id');
     }
 
-    // Relation avec la table Genres
-    public function genre()
+    // Relation avec la table TypesProduits
+    public function typeProduit()
     {
-        return $this->belongsTo(Genre::class, 'genre_id');
+        return $this->belongsTo(TypesProduits::class, 'type_produit_id');
     }
 }

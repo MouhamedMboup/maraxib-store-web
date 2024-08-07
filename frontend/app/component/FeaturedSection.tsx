@@ -37,6 +37,9 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
     axios
       .get(`/produits/${typeProduit}`)
       .then((response: { data: any[] }) => {
+
+        console.log('les produits', response.data);
+        
         console.log("la reponse =", response.data);
         const fetchedCategories = response.data.map((category: any) => ({
           id: category.id,

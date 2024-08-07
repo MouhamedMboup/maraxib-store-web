@@ -7,6 +7,8 @@ use App\Filament\Resources\ProduitResource\RelationManagers;
 use App\Models\Produit;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\EditAction;
@@ -41,15 +43,16 @@ class ProduitResource extends Resource
                 ->label('Image')
                 ->image(),
 
-            Forms\Components\TextInput::make('lien_whatsapp')
+            TextInput::make('lien_whatsapp')
                 ->label('Lien WhatsApp')
                 ->url()
                 ->required(),
 
-                Forms\Components\Select::make('categorie_id')
+                Select::make('categorie_id')
                 ->label('Catégorie')
                 ->relationship('categorie', 'libelle')
                 ->required()
+                ->native(false),
             ]);
     }
 

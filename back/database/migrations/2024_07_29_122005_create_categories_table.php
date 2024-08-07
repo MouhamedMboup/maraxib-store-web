@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('libelle');
             $table->unsignedBigInteger('type_produit_id'); 
             $table->timestamps();
+            
             $table->foreign('type_produit_id')->references('id')->on('types_produits')->onDelete('cascade'); 
         });
     }

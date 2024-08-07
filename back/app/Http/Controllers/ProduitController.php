@@ -74,9 +74,6 @@ class ProduitController extends Controller
     return response()->json(['message' => 'Produit créé avec succès', 'produit' => $produit], 201);
     }
 
-
-
-
     public function show(string $id)
     {
             $produit = Produit::find($id);

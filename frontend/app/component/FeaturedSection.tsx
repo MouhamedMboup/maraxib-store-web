@@ -4,6 +4,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../lib/axios";
 import ProductCard from "./ProductCard";
+import { PulseLoader } from 'react-spinners';
+
 
 interface Product {
   id: number;
@@ -23,11 +25,13 @@ interface Category {
 interface FeaturedCollectionProps {
   className: string;
   typeProduit?: string;
+  page?: boolean;
 }
 
 const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
   className,
   typeProduit,
+  page = false,
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +48,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
         const fetchedCategories = response.data.map((category: any) => ({
           id: category.id,
           libelle: category.libelle,
-          produits: category.produits.map((product: any) => ({
+          produits:(page ? category.produits.slice(0, 5): category.produits).map((product: any) => ({
             id: product.id,
             image: `http://127.0.0.1:8000/storage/${product.image}`,
             libelle: product.libelle,
@@ -64,7 +68,10 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
   }, [typeProduit]);
 
   if (loading) {
-    return <div className="text-center text-green-500 mb-4">Loading...</div>;
+    return <div className="text-center text-green-500 mb-4">
+      {/* Loading... */}
+      <PulseLoader color="#000000 " loading={loading} size={20} />
+      </div>;
   }
 
   if (error) {
@@ -92,6 +99,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
                   libelle={product.libelle}
                   prix={product.prix}
                 />
+                
               </div>
             ))}
           </div>

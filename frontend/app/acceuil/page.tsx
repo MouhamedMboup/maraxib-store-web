@@ -8,7 +8,7 @@ import { FaArrowCircleRight } from 'react-icons/fa'
 import Servicesinfo from '../component/Servicesinfo'
 import Footer from '../component/Footer'
 import useFadeInOnScroll from '../hook/useFadeInOnScroll'
-import NewCollection from '../component/NewCollection'
+
 
 
 
@@ -23,10 +23,10 @@ export default function Acceuil() {
       <Navbar />
       <Herosection className="fade-in" />
       {/* -----card categaories --------- */}
-      <NewCollection title="New Collection" />
-      <FeaturedCollection typeProduit="homme" className="fade-in" />
-      <FeaturedCollection typeProduit="femme" className="fade-in" />
-      <FeaturedCollection typeProduit="accessoire" className="fade-in" />
+      
+      <FeaturedCollection typeProduit="homme" className="fade-in" page={true}/>
+      <FeaturedCollection  typeProduit="femme" className="fade-in" page={true}/>
+      <FeaturedCollection typeProduit="accessoire" className="fade-in" page={true}/>
 
       <button className="bg-black text-white py-4 px-6 rounded-full flex items-center justify-center mx-auto animate-bounce ">
         Voir plus &nbsp; <FaArrowCircleRight className="size-5 " />

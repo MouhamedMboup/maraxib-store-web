@@ -19,8 +19,7 @@ class CategorieSeeder extends Seeder
         Categorie::create(['libelle' => 'Ndiaxass', 'type_produit_id' => 1]);
         Categorie::create(['libelle' => 'Echarpe', 'type_produit_id' => 2]);
         Categorie::create(['libelle' => 'Voile', 'type_produit_id' => 2]);
-        Categorie::create(['libelle' => 'kourouss', 'type_produit_id' => 1]);
-        Categorie::create(['libelle' => 'kourouss', 'type_produit_id' => 1]);
+        Categorie::create(['libelle' => 'kourouss', 'type_produit_id' => 3]);
         Categorie::create(['libelle' => 'Accessoire homme', 'type_produit_id' => 3]);
         Categorie::create(['libelle' => 'Accessoire femme', 'type_produit_id' => 3]);
     }

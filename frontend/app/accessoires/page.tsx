@@ -8,191 +8,15 @@ import Servicesinfo from '../component/Servicesinfo';
 import useFadeInOnScroll from '../hook/useFadeInOnScroll';
 
 
-const productsSet1 = [
-  {
-    imageSrc: '/assets/product1.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product2.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product3.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product4.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product5.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product6.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product7.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product8.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product9.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product10.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product11.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/product12.jpg',
-    title: 'bayelat',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-
-];
-
-const productsSet2 = [
-  {
-    imageSrc: '/assets/njaxass/njaxass5b.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/njaxass/njaxass6.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/njaxass/njaxass7.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/njaxass/njaxass8.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/njaxass/njaxass8a.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/njaxass/njaxass9.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-];
-
-const productsSet3 = [
-  {
-    imageSrc: '/assets/kourous/kourous2.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/kourous/kourous3.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/kourous/kourous4.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/kourous/kourous5.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/kourous/kourous6.jpg',
-    title: 'Laxasaay',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-  {
-    imageSrc: '/assets/kourous/kourous7.jpg',
-    title: 'Chapelet',
-    price: 10000,
-    rating: 4,
-    whatsappLink: 'https://wa.me/776719785',
-  },
-];
-
-
-
-
 const Page: React.FC = () => {
 
   useFadeInOnScroll();
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
 
   return (
     <div>
@@ -261,7 +85,7 @@ const Page: React.FC = () => {
           <li>
             <Link href="/"
               className="block py-2 pl-3 pr-4 text-white bg-cyan-400 rounded md:bg-transparent md:text-cyan-400 md:p-0 md:dark:text-blue-500"
-              aria-current="page">Accesoires</Link>
+              aria-current="page">Accessoires</Link>
           </li>
           
           <li>
@@ -274,10 +98,10 @@ const Page: React.FC = () => {
   </nav>
  {/* prooduit */}
  <div className='pt-20 mt-10'>
- <SearchBar/>
+ <SearchBar onSearch={handleSearch} />
  </div>
  
- <FeaturedCollection typeProduit='accessoire' className="fade-in"/>
+ <FeaturedCollection typeProduit='accessoire' className="fade-in" searchQuery={searchQuery}/>
  <Servicesinfo/>
  <Footer className="fade-in"/>
 

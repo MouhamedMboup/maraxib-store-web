@@ -22,9 +22,9 @@ export default function Acceuil() {
     <div className="font-mono">
       <Navbar onSearch={handleSearch} />
       <Herosection className="fade-in" />
-      <FeaturedCollection typeProduit="homme" className="fade-in" searchQuery={searchQuery} />
-      <FeaturedCollection typeProduit="femme" className="fade-in" />
-      <FeaturedCollection typeProduit="accessoire" className="fade-in" />
+      <FeaturedCollection typeProduit="homme" className="fade-in" searchQuery={searchQuery} page={true}/>
+      <FeaturedCollection typeProduit="femme" className="fade-in" searchQuery={searchQuery} page={true}/>
+      <FeaturedCollection typeProduit="accessoire" className="fade-in" searchQuery={searchQuery} page={true}/>
       <button className="bg-black text-white py-4 px-6 rounded-full flex items-center justify-center mx-auto animate-bounce">
         Voir plus &nbsp; <FaArrowCircleRight className="size-5" />
       </button>

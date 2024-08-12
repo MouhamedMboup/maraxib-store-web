@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "../../lib/axios";
 import ProductCard from "./ProductCard";
 import { ThreeDot } from "react-loading-indicators";
+import page from "../page";
 
 interface Product {
   id: number;
@@ -24,11 +25,13 @@ interface FeaturedCollectionProps {
   className: string;
   typeProduit?: string;
   searchQuery?: string; // Made optional
+  page?: boolean;
 }
 
 const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
   className,
   typeProduit,
+  page = false,
   searchQuery = '', // Default value as empty string
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -43,7 +46,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
         const fetchedCategories = response.data.map((category: any) => ({
           id: category.id,
           libelle: category.libelle,
-          produits: category.produits.map((product: any) => ({
+          produits: (page? category.produits.slice(0, 10) : category.produits).map((product: any) => ({
             id: product.id,
             image: `http://127.0.0.1:8000/storage/${product.image}`,
             libelle: product.libelle,

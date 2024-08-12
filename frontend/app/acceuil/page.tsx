@@ -22,11 +22,10 @@ export default function Acceuil() {
       <Navbar />
       <Herosection className="fade-in" />
       {/* -----card categaories --------- */}
-     
+    
       <FeaturedCollection typeProduit="homme" className="fade-in" />
       <FeaturedCollection typeProduit="femme" className="fade-in" />
       <FeaturedCollection typeProduit="accessoire" className="fade-in" />
-      
 
       <button className="bg-black text-white py-4 px-6 rounded-full flex items-center justify-center mx-auto animate-bounce ">
         Voir plus &nbsp; <FaArrowCircleRight className="size-5 " />

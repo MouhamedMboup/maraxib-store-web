@@ -1,9 +1,9 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
 import axios from "../../lib/axios";
 import ProductCard from "./ProductCard";
+import { ThreeDot } from "react-loading-indicators";
 
 interface Product {
   id: number;
@@ -23,13 +23,16 @@ interface Category {
 interface FeaturedCollectionProps {
   className: string;
   typeProduit?: string;
+  searchQuery?: string; // Made optional
 }
 
 const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
   className,
   typeProduit,
+  searchQuery = '', // Default value as empty string
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [filteredCategories, setFilteredCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -37,10 +40,6 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
     axios
       .get(`/produits/${typeProduit}`)
       .then((response: { data: any[] }) => {
-
-        console.log('les produits', response.data);
-        
-        console.log("la reponse =", response.data);
         const fetchedCategories = response.data.map((category: any) => ({
           id: category.id,
           libelle: category.libelle,
@@ -54,6 +53,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
           })),
         }));
         setCategories(fetchedCategories);
+        setFilteredCategories(fetchedCategories); // Initially, set filtered to fetched
         setLoading(false);
       })
       .catch((_error: any) => {
@@ -63,8 +63,33 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
       });
   }, [typeProduit]);
 
+  // Filter products based on searchQuery
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setFilteredCategories(categories);
+    } else {
+      const lowerCaseQuery = searchQuery.toLowerCase();
+      const newFilteredCategories = categories
+        .map((category) => ({
+          ...category,
+          produits: category.produits.filter(
+            (product) =>
+              product.libelle?.toLowerCase().includes(lowerCaseQuery) ||
+              category.libelle?.toLowerCase().includes(lowerCaseQuery)
+          ),
+        }))
+        .filter((category) => category.produits.length > 0);
+
+      setFilteredCategories(newFilteredCategories);
+    }
+  }, [searchQuery, categories]);
+
   if (loading) {
-    return <div className="text-center text-green-500 mb-4">Loading...</div>;
+    return (
+      <div className="text-center font-bold text-black mb-4 mt-8">
+       <ThreeDot color="#020a02" size="medium" text="" textColor="" />
+      </div>
+    );
   }
 
   if (error) {
@@ -73,7 +98,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
 
   return (
     <section className={`hero-section ${className} py-12 px-4 bg-white`}>
-      {categories?.map((category) => (
+      {filteredCategories?.map((category) => (
         <div key={category.id} className="category-section mb-12">
           <h2 className="text-3xl font-bold text-center mb-8">
             {category.libelle}
@@ -102,4 +127,3 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
 };
 
 export default FeaturedCollection;
-

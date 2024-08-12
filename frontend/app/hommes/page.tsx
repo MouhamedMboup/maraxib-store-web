@@ -12,6 +12,11 @@ const Page: React.FC = () => {
 
   useFadeInOnScroll();
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
 
   return (
     <div>
@@ -93,10 +98,11 @@ const Page: React.FC = () => {
   </nav>
  {/* prooduit */}
  <div className='pt-20 mt-10'>
- <SearchBar/>
+ <SearchBar onSearch={handleSearch}/>
  </div>
  
- <FeaturedCollection  typeProduit='homme' className="fade-in"/>
+ <FeaturedCollection  typeProduit='homme' className="fade-in" searchQuery={searchQuery}/>
+ <FeaturedCollection typeProduit="accessoire" className="fade-in" searchQuery={searchQuery} />
  <Servicesinfo/>
  <Footer className="fade-in"/>
 

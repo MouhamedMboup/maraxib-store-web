@@ -189,7 +189,8 @@ const Page: React.FC = () => {
       <FeaturedCollection
         typeProduit="femme"
         className="fade-in"
-        searchQuery={searchQuery}
+       
+
 
       />
       <Servicesinfo />

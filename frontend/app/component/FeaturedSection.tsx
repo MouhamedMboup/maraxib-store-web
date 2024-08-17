@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import axios from "../../lib/axios";
 import ProductCard from "./ProductCard";
 import { ThreeDot } from "react-loading-indicators";
-import page from "../page";
 
 
 interface Product {
@@ -49,7 +48,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
           libelle: category.libelle,
           produits: (page? category.produits.slice(0, 10) : category.produits).map((product: any) => ({
             id: product.id,
-            image: `http://127.0.0.1:8000/storage/${product.image}`,
+            image: `https://api.maraxib.fewnu.app/storage/${product.image}`,
             libelle: product.libelle,
             prix: product.prix,
             rating: 4,

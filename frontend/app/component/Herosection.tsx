@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaArrowCircleRight } from "react-icons/fa";
+import Link from 'next/link';
 
 interface HerosectionProps {
 className?: string;
@@ -16,9 +17,10 @@ const Herosection : React.FC<HerosectionProps> = ({ className}) => {
              Bayelahat, Laxasay, Coran, Xassida, Tapis de priere, chapelet <br /></p>
              <h2 className='text-black'>Vous pouvez aussi commander votre propre modéle de produit  </h2>  
              
-            <button className="bg-black text-white py-4 px-6 mt-8 rounded-full flex items-center animate-bounce md:mx-0">
+           <Link href="/hommes"> <button className="bg-black text-white py-4 px-6 mt-8 rounded-full flex items-center animate-bounce md:mx-0">
               Découvrir &nbsp; <FaArrowCircleRight className='size-5' />
             </button>
+            </Link>
         </div>
         <div className=" mt-8 pt-10 md:mt-0  justify-center">
             <Image src="/assets/hommes/accueil.jpg" alt="mockup" priority width={500} height={500} quality={100} className=' top-5 rounded-lg shadow-lg ' />

@@ -48,7 +48,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
           libelle: category.libelle,
           produits: (page? category.produits.slice(0, 10) : category.produits).map((product: any) => ({
             id: product.id,
-            image: `https://api.maraxib.fewnu.app/storage/${product.image}`,
+            image: `${process.env.NEXT_PUBLIC_API_URL}/storage/${product.image}`,
             libelle: product.libelle,
             prix: product.prix,
             rating: 4,

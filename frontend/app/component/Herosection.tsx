@@ -23,7 +23,7 @@ const Herosection : React.FC<HerosectionProps> = ({ className}) => {
             </Link>
         </div>
         <div className=" mt-8 pt-10 md:mt-0  justify-center">
-            <Image src="/assets/hommes/accueil.jpg" alt="mockup" priority width={500} height={500} quality={100} className=' top-5 rounded-lg shadow-lg ' />
+            <Image src="/assets/accueil.jpg" alt="mockup" priority width={500} height={500} quality={100} className=' top-5 rounded-lg shadow-lg ' />
         </div> 
                    
     </section>
